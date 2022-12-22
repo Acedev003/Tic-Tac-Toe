@@ -1,3 +1,4 @@
 build/*
 bin/tic_tac
 .vscode/*
+LOG.txt

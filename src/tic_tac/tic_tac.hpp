@@ -1,28 +1,34 @@
 #pragma once
+#include<vector>
 
+class TicTacState
+{
+    public:
+        int row = 0;
+        int col = 0;
+        int score = 0;
+};
 
 class TicTac
-{  
-    public:
-        void draw_board();
-        void ai_play(char player_char,char enemy_char,bool is_simple,bool isMax=true);
+{
+public:
+    int COMPLX_DEPTH = 100;
 
-        bool place_char(int row,int col,char player_char,bool& error_bit);
-        bool match_draw();
-        bool player_won(char player_character);
-    private:
-        class TicTacState
-        {
-            int row;
-            int col;
-            int score;
-        };
-        
-        TicTacState minimax(int depth,int alpha,int beta,bool isMax);
+    void ai_play(char player_char,bool simple);
+    void draw_board();
 
+    bool place_char(int row, int col, char player_char, bool &error_bit);
+    bool match_draw();
+    bool player_won(char player_character);
 
-        int  simple_depth  = 2;
-        int  complex_depth = 10;
+private:
+    int game_tree_depth;
+ 
+    char reverse_player(char player);
 
-        char board[3][3] = {'1','2','3','4','5','6','7','8','9'};
+    int ai_play(char player_char,int value, int depth, int alpha, int beta, bool isMax,std::vector<TicTacState>& immediate_children);
+    int game_eval(char player);
+    int place_char_at_score(char player,int score);
+
+    char board[3][3] = {'1', '2', '3', '4', '5', '6', '7', '8', '9'};
 };

@@ -104,7 +104,7 @@ int main(int argc,char **argv)
 
         if(singleplayer && ai_player_code=='X')
         {
-            game.ai_play('X','O', (ai_difficulty == AI_SIMPLE)?true:false);
+            game.ai_play('X',(ai_difficulty == AI_SIMPLE)?true:false);
         }
         else
         {
@@ -169,7 +169,7 @@ int main(int argc,char **argv)
 
         if(singleplayer && ai_player_code=='O')
         {
-            //TODO
+            game.ai_play('O',(ai_difficulty == AI_SIMPLE)?true:false);
         }
         else
         {
