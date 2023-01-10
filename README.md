@@ -1,2 +1,2 @@
 # Tic-Tac-Toe
-Terminal tic tac toe implementation with AB Pruning based game AI
+Terminal tic tac toe implementation with AB Pruning based game AI (WIP)
